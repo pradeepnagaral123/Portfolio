@@ -1,0 +1,118 @@
+.workflow {
+  padding: var(--space-5xl) 0;
+  position: relative;
+}
+
+.workflow .section-subtitle {
+  margin-bottom: var(--space-3xl);
+}
+
+.workflow__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.workflow__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-2xl) var(--space-2xl) var(--space-3xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.workflow__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--space-2xl);
+  right: var(--space-2xl);
+  height: 1px;
+  background: var(--border-light);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.workflow__card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-4px);
+}
+
+.workflow__card:hover::before {
+  opacity: 1;
+}
+
+.workflow__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.workflow__card-index {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.workflow__card-mark {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-start);
+}
+
+.workflow__card[data-step="idea"] .workflow__card-mark {
+  background: #f2a84b;
+}
+
+.workflow__card[data-step="design"] .workflow__card-mark {
+  background: #e8a04a;
+}
+
+.workflow__card[data-step="build"] .workflow__card-mark {
+  background: #d98a2b;
+}
+
+.workflow__card[data-step="launch"] .workflow__card-mark {
+  background: #cf8b32;
+}
+
+.workflow__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.workflow__card-desc {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .workflow__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow__card {
+    padding: var(--space-xl);
+  }
+}
