@@ -1,12 +1,17 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const links = [
+  { id: 'hero', label: 'Home' },
   { id: 'projects', label: 'Work' },
   { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
 ]
 
 const scrollTo = (id) => {
+  if (id === 'hero') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    return
+  }
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
@@ -29,15 +34,19 @@ export default function HeroNav() {
       </button>
 
       <nav className="hero-nav__links" aria-label="Primary">
-        {links.map((link) => (
-          <button
-            key={link.id}
-            className="hero-nav__link"
-            onClick={() => scrollTo(link.id)}
-          >
-            {link.label}
-          </button>
-        ))}
+        {links.map((link) => {
+          const isActive = link.id === 'hero'
+          return (
+            <button
+              key={link.id}
+              className={`hero-nav__link${isActive ? ' hero-nav__link--active' : ''}`}
+              onClick={() => scrollTo(link.id)}
+            >
+              {isActive && <span className="hero-nav__dot" aria-hidden="true" />}
+              {link.label}
+            </button>
+          )
+        })}
       </nav>
     </motion.header>
   )
