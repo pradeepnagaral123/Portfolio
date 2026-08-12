@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
+import Parallax from '../Parallax'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 36 },
@@ -14,7 +15,7 @@ export default function AboutHero() {
   return (
     <section className="relative">
       <div className="mx-auto max-w-[88rem] px-6 pt-16 pb-12 lg:px-10 lg:pt-24 lg:pb-16">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-8">
+        <Parallax className="grid gap-10 lg:grid-cols-2 lg:gap-8" from={50} to={-50}>
           <div>
             <motion.p
               custom={0}
@@ -93,7 +94,7 @@ export default function AboutHero() {
               <ArrowUpRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </motion.a>
           </div>
-        </div>
+        </Parallax>
       </div>
     </section>
   )

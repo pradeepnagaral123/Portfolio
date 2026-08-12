@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Parallax from '../Parallax'
 import {
   ReactIcon,
   NextIcon,
@@ -67,7 +68,8 @@ export default function TechnologyGrid() {
   return (
     <section>
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10">
-        <div className="border border-line">
+        <Parallax from={40} to={-40}>
+          <div className="border border-line">
           <div className="grid lg:grid-cols-[0.9fr_2.1fr]">
             <nav className="flex flex-row flex-wrap lg:flex-col">
               {categories.map((cat) => {
@@ -130,7 +132,8 @@ export default function TechnologyGrid() {
               </AnimatePresence>
             </div>
           </div>
-        </div>
+          </div>
+        </Parallax>
       </div>
     </section>
   )

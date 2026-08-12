@@ -6,6 +6,7 @@ import Journey from './about/Journey'
 import Education from './about/Education'
 import BeyondCode from './about/BeyondCode'
 import FinalCTA from './about/FinalCTA'
+import Parallax from './Parallax'
 import '../styles/about.css'
 
 export default function About() {
@@ -18,11 +19,11 @@ export default function About() {
 
       <section>
         <div className="mx-auto max-w-[88rem] px-6 pt-16 pb-10 lg:px-10 lg:pt-20 lg:pb-12">
-          <div className="grid gap-5 lg:grid-cols-3">
+          <Parallax className="grid gap-5 lg:grid-cols-3" from={40} to={-40}>
             <Journey />
             <Education />
             <BeyondCode />
-          </div>
+          </Parallax>
         </div>
       </section>
 

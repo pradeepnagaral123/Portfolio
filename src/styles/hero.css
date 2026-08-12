@@ -143,6 +143,11 @@
 }
 
 /* ---- main composition ---- */
+.hero__content-wrap {
+  flex: 1;
+  min-height: 0;
+}
+
 .hero__content {
   position: relative;
   flex: 1;

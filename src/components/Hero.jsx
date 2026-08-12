@@ -5,6 +5,7 @@ import HeroHeadline from './hero/HeroHeadline'
 import HeroIntro from './hero/HeroIntro'
 import HeroSocial from './hero/HeroSocial'
 import HeroBottom from './hero/HeroBottom'
+import Parallax from './Parallax'
 import '../styles/hero.css'
 
 const Hero3D = lazy(() => import('./hero/Hero3D'))
@@ -25,13 +26,20 @@ export default function Hero() {
       </Suspense>
       <div className="hero__inner">
         <HeroNav />
-        <div className="hero__content">
+        <Parallax
+          className="hero__content"
+          outerClassName="hero__content-wrap"
+          from={70}
+          to={-70}
+        >
           <HeroHeadline revealed={revealed} />
           <HeroSocial />
           <HeroIntro />
-        </div>
+        </Parallax>
       </div>
-      <HeroBottom />
+      <Parallax className="hero-bottom" from={30} to={-30}>
+        <HeroBottom />
+      </Parallax>
     </section>
   )
 }

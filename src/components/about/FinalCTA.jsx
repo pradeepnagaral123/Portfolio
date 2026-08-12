@@ -1,17 +1,19 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
+import Parallax from '../Parallax'
 
 export default function FinalCTA() {
   return (
     <section>
       <div className="mx-auto max-w-[88rem] px-6 pt-6 pb-16 lg:px-10 lg:pt-8 lg:pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden border border-line"
-        >
+        <Parallax from={50} to={-50}>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative overflow-hidden border border-line"
+          >
           <svg
             className="pointer-events-none absolute left-0 top-0 h-full w-44 text-accent opacity-15 lg:w-56"
             viewBox="0 0 200 400"
@@ -44,7 +46,8 @@ export default function FinalCTA() {
               <ArrowUpRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
-        </motion.div>
+          </motion.div>
+        </Parallax>
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Parallax from './Parallax'
 import '../styles/contact.css'
 
 const socialLinks = [
@@ -70,14 +71,15 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact" ref={ref}>
-      <div className="contact__glow" />
-      <div className="contact__glow contact__glow--right" />
+      <Parallax className="contact__glow" from={140} to={-140} />
+      <Parallax className="contact__glow contact__glow--right" from={-140} to={140} />
       <div className="section-container">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-        >
+        <Parallax from={40} to={-40}>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+          >
           <motion.div variants={itemVariants}>
             <span className="section-label">Contact</span>
             <h2 className="section-title">Let's work together</h2>
@@ -223,7 +225,8 @@ export default function Contact() {
               </button>
             </motion.form>
           </div>
-        </motion.div>
+          </motion.div>
+        </Parallax>
       </div>
     </section>
   )

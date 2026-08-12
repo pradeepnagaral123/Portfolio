@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Parallax from './Parallax'
 import '../styles/footer.css'
 
 const navLinks = [
@@ -50,7 +51,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="section-container">
-        <div className="footer__top">
+        <Parallax className="footer__top" from={35} to={-35}>
           <div className="footer__brand">
             <span className="footer__logo">
               <span className="footer__logo-bracket">&lt;</span>
@@ -97,7 +98,7 @@ export default function Footer() {
               hello@pradeepnagaral.dev
             </a>
           </div>
-        </div>
+        </Parallax>
 
         <div className="footer__bottom">
           <p className="footer__copy">

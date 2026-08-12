@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import illustrations from './ProjectIllustrations'
+import Parallax from './Parallax'
 import '../styles/projects.css'
 
 const categories = ['All', 'Frontend', 'Backend', 'Full-Stack']
@@ -89,18 +90,20 @@ export default function Projects() {
   return (
     <section id="projects" className="projects" ref={ref}>
       <div className="section-container">
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="section-label">Projects</span>
-          <h2 className="section-title">Selected work</h2>
-          <p className="section-subtitle">
-            A curated selection of projects that showcase my skills in
-            building end-to-end web solutions.
-          </p>
-        </motion.div>
+        <Parallax from={50} to={-50}>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="section-label">Projects</span>
+            <h2 className="section-title">Selected work</h2>
+            <p className="section-subtitle">
+              A curated selection of projects that showcase my skills in
+              building end-to-end web solutions.
+            </p>
+          </motion.div>
+        </Parallax>
 
         <motion.div
           className="projects__filters"
@@ -119,12 +122,13 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        <motion.div
-          className="projects__grid"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-        >
+        <Parallax from={45} to={-45}>
+          <motion.div
+            className="projects__grid"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+          >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.article
@@ -170,7 +174,8 @@ export default function Projects() {
               </motion.article>
             ))}
           </AnimatePresence>
-        </motion.div>
+          </motion.div>
+        </Parallax>
       </div>
     </section>
   )

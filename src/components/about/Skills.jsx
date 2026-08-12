@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Parallax from '../Parallax'
 
 export default function Skills() {
   return (
     <section>
       <div className="mx-auto max-w-[88rem] px-6 py-16 lg:px-10 lg:py-20">
-        <div className="grid items-end gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <Parallax className="grid items-end gap-8 lg:grid-cols-[1.15fr_0.85fr]" from={40} to={-40}>
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +42,7 @@ export default function Skills() {
               <ArrowRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-1.5" />
             </a>
           </motion.div>
-        </div>
+        </Parallax>
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Parallax from './Parallax'
 import '../styles/workflow.css'
 
 const steps = [
@@ -50,24 +51,27 @@ export default function Workflow() {
   return (
     <section id="workflow" className="workflow" ref={ref}>
       <div className="section-container">
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="section-label">Process</span>
-          <h2 className="section-title">Our workflow</h2>
-          <p className="section-subtitle">
-            From an idea to a product people love.
-          </p>
-        </motion.div>
+        <Parallax from={50} to={-50}>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="section-label">Process</span>
+            <h2 className="section-title">Our workflow</h2>
+            <p className="section-subtitle">
+              From an idea to a product people love.
+            </p>
+          </motion.div>
+        </Parallax>
 
-        <motion.div
-          className="workflow__grid"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-        >
+        <Parallax from={45} to={-45}>
+          <motion.div
+            className="workflow__grid"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+          >
           {steps.map((step, i) => (
             <motion.article
               key={step.id}
@@ -83,7 +87,8 @@ export default function Workflow() {
               <p className="workflow__card-desc">{step.description}</p>
             </motion.article>
           ))}
-        </motion.div>
+          </motion.div>
+        </Parallax>
       </div>
     </section>
   )
