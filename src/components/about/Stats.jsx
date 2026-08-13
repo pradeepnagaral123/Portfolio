@@ -50,18 +50,18 @@ export default function Stats() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
-                  className="group bg-ink p-6 transition-colors duration-500 hover:bg-ink-2 lg:p-8"
+                  className="group bg-ink p-5 transition-colors duration-500 hover:bg-ink-2 lg:p-6"
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-line-2 text-accent transition-colors duration-500 group-hover:border-accent/60">
-                    <Icon className="h-5 w-5" strokeWidth={1.5} />
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-line-2 text-accent transition-colors duration-500 group-hover:border-accent/60">
+                    <Icon className="h-4 w-4" strokeWidth={1.5} />
                   </div>
-                  <p className="font-display text-4xl tracking-wide text-paper lg:text-5xl">
+                  <p className="font-display text-3xl tracking-wide text-paper lg:text-4xl">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-xs tracking-[0.3em] text-secondary uppercase">
+                  <p className="mt-1.5 text-xs tracking-[0.3em] text-secondary uppercase">
                     {stat.label}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-dim">{stat.desc}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-dim">{stat.desc}</p>
                 </motion.div>
               )
             })}

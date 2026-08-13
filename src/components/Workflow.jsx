@@ -51,17 +51,33 @@ export default function Workflow() {
   return (
     <section id="workflow" className="workflow" ref={ref}>
       <div className="section-container">
-        <Parallax from={50} to={-50}>
+        <Parallax from={40} to={-40}>
           <motion.div
+            className="workflow__header"
             initial={{ y: 30, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-label">Process</span>
-            <h2 className="section-title">Our workflow</h2>
-            <p className="section-subtitle">
-              From an idea to a product people love.
-            </p>
+            <div>
+              <span className="workflow__label">Process</span>
+              <h2 className="workflow__title">
+                <span className="workflow__title-line">From idea</span>
+                <span className="workflow__title-line workflow__title-line--accent">
+                  to launch.
+                </span>
+              </h2>
+            </div>
+
+            <div className="workflow__header-right">
+              <p className="workflow__subtitle">
+                A focused, transparent process that turns your vision into a
+                product people love.
+              </p>
+              <div className="workflow__meta">
+                <span className="workflow__meta-line" />
+                <span className="workflow__meta-text">4 phases · 01 — 04</span>
+              </div>
+            </div>
           </motion.div>
         </Parallax>
 
@@ -72,21 +88,25 @@ export default function Workflow() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
-          {steps.map((step, i) => (
-            <motion.article
-              key={step.id}
-              className="workflow__card"
-              data-step={step.id}
-              variants={cardVariants}
-            >
-              <div className="workflow__card-top">
-                <span className="workflow__card-index">0{i + 1}</span>
-                <span className="workflow__card-mark" aria-hidden="true" />
-              </div>
-              <h3 className="workflow__card-title">{step.title}</h3>
-              <p className="workflow__card-desc">{step.description}</p>
-            </motion.article>
-          ))}
+            {steps.map((step, i) => (
+              <motion.article
+                key={step.id}
+                className="workflow__card"
+                data-step={step.id}
+                variants={cardVariants}
+              >
+                <div className="workflow__card-top">
+                  <span className="workflow__card-index">0{i + 1}</span>
+                  <span className="workflow__card-arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 12L12 2M12 2H4M12 2v8"/>
+                    </svg>
+                  </span>
+                </div>
+                <h3 className="workflow__card-title">{step.title}</h3>
+                <p className="workflow__card-desc">{step.description}</p>
+              </motion.article>
+            ))}
           </motion.div>
         </Parallax>
       </div>

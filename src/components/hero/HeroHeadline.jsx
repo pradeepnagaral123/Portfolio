@@ -54,29 +54,40 @@ export default function HeroHeadline({ revealed }) {
   }, [revealed, reducedMotion])
 
   return (
-    <h1 className="hero-headline" ref={containerRef} aria-label="I build digital experiences.">
-      {LINES.map((line, i) => (
-        <motion.span
-          key={line.text}
-          className={`hero-headline__mask hero-headline__mask--${i}`}
-          initial={reducedMotion ? { opacity: 0 } : { y: '112%' }}
-          animate={reducedMotion ? { opacity: 1 } : { y: '0%' }}
-          transition={{ duration: 1, ease: EASE, delay: 0.45 + i * 0.14 }}
-        >
-          <span className={`hero-headline__line hero-headline__line--${i}`}>
-            {line.text.split('').map((char, j) => (
-              <span
-                key={j}
-                className={`hero-headline__char${char === '.' ? ' hero-headline__char--accent' : ''}`}
-                aria-hidden="true"
-              >
-                {char}
-              </span>
-            ))}
-          </span>
-        </motion.span>
-      ))}
-      <span className="sr-only">I build digital experiences.</span>
-    </h1>
+    <div className="hero-headline-block">
+      <motion.span
+        className="hero-headline__intro-mask"
+        initial={reducedMotion ? { opacity: 0 } : { y: '112%' }}
+        animate={reducedMotion ? { opacity: 1 } : { y: '0%' }}
+        transition={{ duration: 0.9, ease: EASE, delay: 0.3 }}
+      >
+        <span className="hero-headline__intro">hi everyone, i am pradeep</span>
+      </motion.span>
+
+      <h1 className="hero-headline" ref={containerRef} aria-label="I build digital experiences.">
+        {LINES.map((line, i) => (
+          <motion.span
+            key={line.text}
+            className={`hero-headline__mask hero-headline__mask--${i}`}
+            initial={reducedMotion ? { opacity: 0 } : { y: '112%' }}
+            animate={reducedMotion ? { opacity: 1 } : { y: '0%' }}
+            transition={{ duration: 1, ease: EASE, delay: 0.45 + i * 0.14 }}
+          >
+            <span className={`hero-headline__line hero-headline__line--${i}`}>
+              {line.text.split('').map((char, j) => (
+                <span
+                  key={j}
+                  className={`hero-headline__char${char === '.' ? ' hero-headline__char--accent' : ''}`}
+                  aria-hidden="true"
+                >
+                  {char}
+                </span>
+              ))}
+            </span>
+          </motion.span>
+        ))}
+        <span className="sr-only">I build digital experiences.</span>
+      </h1>
+    </div>
   )
 }
