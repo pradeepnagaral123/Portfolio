@@ -28,3 +28,9 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+}
