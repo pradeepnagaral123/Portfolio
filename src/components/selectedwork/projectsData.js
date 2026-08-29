@@ -7,8 +7,8 @@ export const projects = [
       'A full-stack mental health peer support platform that connects, supports and empowers people anonymously.',
     techs: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     url: '#',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/Screenshot 2026-08-29 124544.png',
+    alignLeft: true,
   },
   {
     id: 2,
@@ -18,8 +18,7 @@ export const projects = [
       'An AI-powered interview preparation platform that simulates realistic technical interviews.',
     techs: ['React', 'Node.js', 'AI API', 'MongoDB'],
     url: '#',
-    image:
-      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/Screenshot 2026-08-29 132612.png',
   },
   {
     id: 3,
@@ -29,8 +28,8 @@ export const projects = [
       'A personal finance application for tracking expenses, budgets and spending patterns.',
     techs: ['React', 'Node.js', 'MongoDB'],
     url: '#',
-    image:
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/Screenshot 2026-08-29 190124.png',
+    alignLeft: true,
   },
   {
     id: 4,

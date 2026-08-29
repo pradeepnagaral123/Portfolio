@@ -2,7 +2,7 @@ import TechnologyIcons from './TechnologyIcons'
 
 export default function ProjectCard({ project, index, total }) {
   return (
-    <article className="p-card" data-index={index}>
+    <article className={`p-card${project.alignLeft ? ' p-card--align-left' : ''}`} data-index={index}>
       <div className="p-card__info">
         <div className="p-card__top">
           <span className="p-card__label">{project.label}</span>
