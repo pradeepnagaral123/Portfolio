@@ -45,7 +45,7 @@ export default function HeroSocial() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: EASE, delay: 1.05 }}
     >
-      <span className="hero-social__label">Connect me</span>
+      <span className="hero-social__label">Contact me</span>
       {socialLinks.map((link) => (
         <a
           key={link.name}

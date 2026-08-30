@@ -61,7 +61,7 @@ export default function HeroHeadline({ revealed }) {
         animate={reducedMotion ? { opacity: 1 } : { y: '0%' }}
         transition={{ duration: 0.9, ease: EASE, delay: 0.3 }}
       >
-        <span className="hero-headline__intro">hi everyone, i am pradeep</span>
+        <span className="hero-headline__intro">hi everyone, i am Pradeep Nagaral</span>
       </motion.span>
 
       <h1 className="hero-headline" ref={containerRef} aria-label="I build digital experiences.">
