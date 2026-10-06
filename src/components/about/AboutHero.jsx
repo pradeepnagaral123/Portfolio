@@ -87,7 +87,8 @@ export default function AboutHero() {
               whileInView="visible"
               viewport={{ once: true, margin: '-80px' }}
               variants={fadeUp}
-              href="#contact"
+              href="/images/Pradeep_Nagaral_Resume.pdf"
+              download="Pradeep_Nagaral_Resume.pdf"
               className="group mt-2 inline-flex items-center gap-2 border-b border-accent pb-2 text-xs tracking-[0.3em] text-paper uppercase transition-colors duration-300 hover:text-accent"
             >
               Download Resume
