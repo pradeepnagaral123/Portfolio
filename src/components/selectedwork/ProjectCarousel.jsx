@@ -56,7 +56,7 @@ export default function ProjectCarousel() {
             />
           </div>
           <span className="projects-progress__count">
-            01 — 04
+            01 — {String(projects.length).padStart(2, '0')}
           </span>
         </div>
       </div>

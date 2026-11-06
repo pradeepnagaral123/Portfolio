@@ -26,7 +26,12 @@ export default function ProjectCard({ project, index, total }) {
 
         <TechnologyIcons techs={project.techs} />
 
-        <a href={project.url} className="p-card__cta">
+        <a
+          href={project.url}
+          className="p-card__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View Project
           <svg className="p-card__cta-arrow" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
