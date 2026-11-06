@@ -27,7 +27,7 @@ export const contactInfo = {
       id: 'linkedin',
       label: 'LINKEDIN',
       value: 'linkedin.com/in/pradeep',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/pradeep-nagaral-1a92a1311',
       icon: LinkedinIcon,
     },
     {
@@ -66,8 +66,8 @@ export const contactInfo = {
     title: 'Find me on',
     items: [
       { id: 'github', label: 'GitHub', url: 'https://github.com/pradeepnagaral123', icon: GithubIcon },
-      { id: 'linkedin', label: 'LinkedIn', url: 'https://linkedin.com', icon: LinkedinIcon },
-      { id: 'email', label: 'Email', url: 'mailto:hello@pradeepnagaral.dev', icon: Mail },
+      { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/pradeep-nagaral-1a92a1311', icon: LinkedinIcon },
+      { id: 'email', label: 'Email', url: 'https://mail.google.com/mail/?view=cm&fs=1&to=pradeepnagaral4@email.com', icon: Mail },
     ],
   },
   cta: {

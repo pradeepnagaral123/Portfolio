@@ -1,6 +1,29 @@
 import { useRef } from 'react'
+import { Mail } from 'lucide-react'
 import Parallax from './Parallax'
+import { GithubIcon, LinkedinIcon } from './contact/BrandIcons'
 import '../styles/footer.css'
+
+const socials = [
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/pradeep-nagaral-1a92a1311',
+    Icon: LinkedinIcon,
+  },
+  {
+    id: 'github',
+    label: 'GitHub',
+    href: 'https://github.com/pradeepnagaral123',
+    Icon: GithubIcon,
+  },
+  {
+    id: 'gmail',
+    label: 'Gmail',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=pradeepnagaral4@email.com',
+    Icon: Mail,
+  },
+]
 
 export default function Footer() {
   const firstRef = useRef(null)
@@ -45,6 +68,21 @@ export default function Footer() {
             </span>
           </div>
         </Parallax>
+
+        <div className="footer__social">
+          {socials.map(({ id, label, href, Icon }) => (
+            <a
+              key={id}
+              href={href}
+              className="footer__social-btn"
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              <Icon size={18} />
+              <span>{label}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   )
